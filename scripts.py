@@ -1,5 +1,5 @@
-from datacenter.models import (Chastisement, Commendation, Lesson, Mark,
-                               Schoolkid, Subject)
+from datacenter.models import (Chastisement, Commendation, Lesson,
+                               Mark, Schoolkid)
 from random import choice
 
 
@@ -50,7 +50,9 @@ def find_schoolkid(full_name):
         return schoolkids.first()
 
 
-def main(kid_full_name, subject_title):
+def main():
+    kid_full_name = input("Введите полное имя ученика: ")
+    subject_title = input("Введите название предмета: ")
     schoolkid = find_schoolkid(kid_full_name)
     if schoolkid:
         fix_marks(schoolkid)
@@ -59,4 +61,4 @@ def main(kid_full_name, subject_title):
 
 
 if __name__ == '__main__':
-    main(kid_full_name, subject_title)
+    main()
